@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>Beowulf Theme/Quotes</title>
+		<style>
+			.table_div {
+				border: 2px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="position:absolute; top:50%; left:50%; -moz-transform: translateX(-50%) translateY(-50%); -webkit-transform: translateX(-50%) translateY(-50%); transform: translateX(-50%) translateY(-50%);">
+			<hr/>
+			<div style="text-align:center; font-size:36px">
+				<p>Theme: Good always prospers over evil.</p>
+			</div>
+			<hr/>
+			<div style="text-align:center; font-size:36px">
+				<table style="display:inline-block">
+					<tr>
+						<td><button onclick="move(-1)"><<<</button></td>
+						<td><p id="text_line" style="text-align:center; font-size:36px"></p></td>
+						<td><button onclick="move(1)">>>></button></td>
+					</tr>
+				</table>
+			</div>
+			<hr/>
+		</div>
+	</body>
+</html>
+
+<script>
+	var lineDisplay = 0;
+	var lines = ["Venturing closer,<br/>his talon was raised to attack Beowulf<br/>where he lay on the bed; he was bearing in<br/>with open claw when the alert hero's<br/>comeback and armlock forestalled him utterly.<br/>(lines 744-748)", "And before he bedded down, Beowulf,<br/>that prince of goodness, proudly asserted:<br/>(lines 675-676)", "The captain of evil discovered himself<br/>in a handgrip harder than anything<br/>he had ever encountered in any man<br/>on the face of the earth.<br/>(lines 749-752)", "Beowulf was granted<br/>the glory of winning; Grendel was driven<br/>under the fen-banks, fatally hurt,<br/>to his desolate lair.<br/>(lines 817-820)", "So the Shieldings' hero, hard-pressed and enraged,<br/>took a firm hold of the hilt and swung<br/>the blade in an arc, a resolute blow<br/>that bit deep into her neck-bone<br/>and severed it entirely, toppling the doomed<br/>house of her flesh; she fell to the floor.<br/>(lines 1563-1568)", "The Almighty Judge<br/>of good deeds and bad, the Lord God,<br/>Head of the Heavens and High King of the World,<br/>was unknown to them.<br/>(lines 180-183)"];
+	
+	document.getElementById("text_line").innerHTML = lines[lineDisplay];
+	
+	function move(many) {
+		lineDisplay += many;
+		if (lineDisplay < 0) {
+			lineDisplay = 0;
+		}
+		if (lineDisplay > 5) {
+			lineDisplay = 5;
+		}
+		document.getElementById("text_line").innerHTML = lines[lineDisplay];
+	}
+</script>
